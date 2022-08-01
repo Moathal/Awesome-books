@@ -10,9 +10,10 @@ function resetBooksList() {
   booksList.innerHTML = '';
   for (let i = 0; i < books.length; i += 1) {
     const book = document.createElement('div');
+    book.classList.add('book');
     book.innerHTML = `<h4>${books[i].book}</h4>
         <h4>${books[i].author}</h4>
-        <button id=${i} class="rem-btn" >Remove</button>`;
+        <button id=${i} class="rem-btn" >Remove</button><br> <br>`;
     booksList.appendChild(book);
   }
 }
@@ -20,7 +21,7 @@ resetBooksList();
 
 function deleteBook(buttonid) {
   books.splice(buttonid, 1);
-  window.localStorage.setItem('books', JSON.stringify(books))
+  window.localStorage.setItem('books', JSON.stringify(books));
   resetBooksList();
 }
 
@@ -35,7 +36,6 @@ addBook.addEventListener('click', () => {
   book.book = newBook.value;
   book.author = newAuthor.value;
   books.push(book);
-  window.localStorage.setItem('books', JSON.stringify(books))
+  window.localStorage.setItem('books', JSON.stringify(books));
   resetBooksList();
 });
-
