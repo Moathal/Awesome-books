@@ -2,13 +2,9 @@ const addBook = document.getElementById('add-book');
 const newBook = document.getElementById('book');
 const newAuthor = document.getElementById('author');
 const booksList = document.querySelector('.books-list');
+let books = [];
 
-const books = [
-  {
-    book: 'Harry Potter',
-    author: 'J.K Rolling',
-  },
-];
+if (localStorage.getItem('books') !== null) books = JSON.parse(localStorage.getItem('books'));
 
 function resetBooksList() {
   booksList.innerHTML = '';
@@ -24,6 +20,7 @@ resetBooksList();
 
 function deleteBook(buttonid) {
   books.splice(buttonid, 1);
+  window.localStorage.setItem('books', JSON.stringify(books))
   resetBooksList();
 }
 
@@ -38,5 +35,7 @@ addBook.addEventListener('click', () => {
   book.book = newBook.value;
   book.author = newAuthor.value;
   books.push(book);
+  window.localStorage.setItem('books', JSON.stringify(books))
   resetBooksList();
 });
+
