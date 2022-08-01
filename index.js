@@ -1,31 +1,42 @@
-const addBook = document.querySelector('.add-book');
+const addBook = document.getElementById('add-book');
 const newBook = document.getElementById('book');
 const newAuthor = document.getElementById('author');
-const booksList = document.querySelector('.books-list')
-let books = [
-    {
-book: 'Harry Potter',
-author: 'J.K Rolling'
-},
-]
+const booksList = document.querySelector('.books-list');
 
-function resetBooksList () {
-    for (let i = 0; i < books.length; i+=1) {
-        let book = document.createElement('li');
-       book.innerHTML = `<h3>${books[i].book}</h3>
-        <h3>${books[i].author}</h3>
-        <button  onclick=deleteBook(${i})>Remove</button>`
-        booksList.appendChild(book);
-    };
+const books = [
+  {
+    book: 'Harry Potter',
+    author: 'J.K Rolling',
+  },
+];
+
+function resetBooksList() {
+  booksList.innerHTML = '';
+  for (let i = 0; i < books.length; i += 1) {
+    const book = document.createElement('div');
+    book.innerHTML = `<h4>${books[i].book}</h4>
+        <h4>${books[i].author}</h4>
+        <button id=${i} class="rem-btn" >Remove</button>`;
+    booksList.appendChild(book);
+  }
+}
+resetBooksList();
+
+function deleteBook(buttonid) {
+  books.splice(buttonid, 1);
+  resetBooksList();
 }
 
+booksList.addEventListener('click', (e) => {
+  if (e.target.className === 'rem-btn') {
+    deleteBook(e.id);
+  }
+});
 
-function deleteBook (button) {
-    books.splice(button, 1);
-};
-
-addBook.addEventListener('click', () =>{
-    let book = {book:'', author:''};
-    book.book = newBook.value;
-    book.author = newAuthor.value;
+addBook.addEventListener('click', () => {
+  const book = { book: '', author: '' };
+  book.book = newBook.value;
+  book.author = newAuthor.value;
+  books.push(book);
+  resetBooksList();
 });
