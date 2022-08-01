@@ -27,7 +27,7 @@ function deleteBook(buttonid) {
 
 booksList.addEventListener('click', (e) => {
   if (e.target.className === 'rem-btn') {
-    deleteBook(e.id);
+    deleteBook(e.target.id);
   }
 });
 
