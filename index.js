@@ -2,40 +2,56 @@ const addBook = document.getElementById('add-book');
 const newBook = document.getElementById('book');
 const newAuthor = document.getElementById('author');
 const booksList = document.querySelector('.books-list');
-let books = [];
 
-if (localStorage.getItem('books') !== null) books = JSON.parse(localStorage.getItem('books'));
-
-function resetBooksList() {
-  booksList.innerHTML = '';
-  for (let i = 0; i < books.length; i += 1) {
-    const book = document.createElement('div');
-    book.classList.add('book');
-    book.innerHTML = `<h4>${books[i].book}</h4>
-        <h4>${books[i].author}</h4>
-        <button id=${i} class="rem-btn" >Remove</button><br> <br>`;
-    booksList.appendChild(book);
+class Book{
+  constructor(book, author){
+    this.book=book;
+    this.author=author;
   }
 }
-resetBooksList();
 
-function deleteBook(buttonid) {
-  books.splice(buttonid, 1);
-  window.localStorage.setItem('books', JSON.stringify(books));
-  resetBooksList();
+class BookM{
+    constructor(){
+      this.Books=[];
+    }
+    resetBooksList() {
+    booksList.innerHTML = '';
+    for (let i = 0; i < this.Books.length; i += 1) {
+      const book = document.createElement('div');
+      book.classList.add('book');
+      if(i%2===0){
+        book.classList.add('bg-danger');
+      } else {
+        book.classList.add('bg-light');
+      }
+      book.innerHTML = `<p>"${this.Books[i].book}" by
+          ${this.Books[i].author}</p>
+          <button id=${i} class="rem-btn" >Remove</button><br> <br>`;
+      booksList.appendChild(book);
+    }
+  }
+    deleteBook(buttonid) {
+    this.Books.splice(buttonid, 1);
+    window.localStorage.setItem('books', JSON.stringify(this.Books));
+    resetBooksList();
+  }
+
 }
+let methods= new BookM();
+if (localStorage.getItem('books') !== null) methods.Books = JSON.parse(localStorage.getItem('books'));
+
+
+methods.resetBooksList();
 
 booksList.addEventListener('click', (e) => {
   if (e.target.className === 'rem-btn') {
-    deleteBook(e.target.id);
+    methods.deleteBook(e.target.id);
   }
 });
 
 addBook.addEventListener('click', () => {
-  const book = { book: '', author: '' };
-  book.book = newBook.value;
-  book.author = newAuthor.value;
-  books.push(book);
-  window.localStorage.setItem('books', JSON.stringify(books));
-  resetBooksList();
+  let book = new Book(newBook.value, newAuthor.value)
+  methods.Books.push(book);
+  window.localStorage.setItem('books', JSON.stringify(methods.Books));
+  methods.resetBooksList();
 });
