@@ -1,5 +1,54 @@
+html {
+  width: 100%;
+}
+
+body {
+  width: 100%;
+}
+
+.books-sect {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.books-list {
+  border: 2px solid black;
+  width: 100%;
+}
+
 .book {
-  border-bottom-width: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  padding: 0 1%;
+}
+
+p {
+  flex-grow: 2;
+}
+
+.add-book {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+}
+
+#add-book {
+  float: right;
+}
+
+.line {
+  min-width: 7%;
+  height: 5px;
+  border-bottom-color: #808080;
   border-bottom-style: solid;
-  border-bottom-color: black;
+  margin: 10px;
 }
