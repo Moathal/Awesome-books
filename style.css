@@ -1,15 +1,12 @@
-/* .book {
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: black;
-} */
-html{
+html {
   width: 100%;
 }
-body{
+
+body {
   width: 100%;
 }
-.books-sect{
+
+.books-sect {
   width: 45%;
   display: flex;
   flex-direction: column;
@@ -17,22 +14,25 @@ body{
   align-items: center;
   align-content: center;
 }
-.books-list{
+
+.books-list {
   border: 2px solid black;
   width: 100%;
 }
-.book{
+
+.book {
   display: flex;
   justify-content: space-between;
   align-content: center;
   align-items: center;
   padding: 0 1%;
-
 }
-p{
+
+p {
   flex-grow: 2;
 }
-.add-book{
+
+.add-book {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -40,10 +40,12 @@ p{
   align-content: center;
   align-items: center;
 }
-#add-book{
-    float: right;
+
+#add-book {
+  float: right;
 }
-.line{
+
+.line {
   min-width: 7%;
   height: 5px;
   border-bottom-color: #808080;
