@@ -2,8 +2,7 @@ const addBook = document.getElementById('add-book');
 const newBook = document.getElementById('book');
 const newAuthor = document.getElementById('author');
 const booksList = document.querySelector('.books-list');
-const pages=document.querySelectorAll(".page");
-const header=document.querySelector("header");
+
 class Book {
   constructor(book, author) {
     this.book = book;
@@ -57,10 +56,3 @@ addBook.addEventListener('click', () => {
   window.localStorage.setItem('books', JSON.stringify(methods.Books));
   methods.resetBooksList();
 });
-
-let link="a";
-header.addEventListener("click", (e)=>{
-  link=e.target.innerText.replace(/\s/g, '');
-  pages.forEach(page => page.classList.remove('active'));
-  document.getElementById(link).classList.add('active');
-} )

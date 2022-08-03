@@ -7,13 +7,12 @@ body {
 }
 
 .books-sect {
-  width: 90%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: center;
-  height: 80vh;
 }
 
 .books-list {
@@ -43,59 +42,13 @@ p {
 }
 
 #add-book {
-  float: right !important;
+  float: right;
 }
 
 .line {
-  width: 7%;
+  min-width: 7%;
   height: 5px;
   border-bottom-color: #808080;
   border-bottom-style: solid;
   margin: 10px;
-  align-self: center;
-}
-.add-section{
-  width: 80%;
-  height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  flex-direction: column;
-}
-.form{
-  width: 70%;
-}
-header{
-  position: fixed;
-  z-index: 1;
-  left: 3px;
-  right: 3px;
-  top: 3px;
-}
-footer{
-  position: fixed;
-  z-index: 1;
-  left: 3px;
-  right: 3px;
-  bottom: 3px;
-}
-.contact{
-  height: 80vh;
-  font-size: 2.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.h1{
-  font-size: 4rem !important;
-}
-
-.page {
-  display: none !important;
-}
-
-.page.active {
-  display: flex !important;
 }
