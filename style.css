@@ -54,7 +54,8 @@ p {
   margin: 10px;
   align-self: center;
 }
-.add-section{
+
+.add-section {
   width: 80%;
   height: 80vh;
   display: flex;
@@ -63,24 +64,28 @@ p {
   align-content: center;
   flex-direction: column;
 }
-.form{
+
+.form {
   width: 70%;
 }
-header{
+
+header {
   position: fixed;
   z-index: 1;
   left: 3px;
   right: 3px;
   top: 3px;
 }
-footer{
+
+footer {
   position: fixed;
   z-index: 1;
   left: 3px;
   right: 3px;
   bottom: 3px;
 }
-.contact{
+
+.contact {
   height: 80vh;
   font-size: 2.5rem;
   display: flex;
@@ -88,7 +93,8 @@ footer{
   align-items: center;
   flex-direction: column;
 }
-.h1{
+
+.h1 {
   font-size: 4rem !important;
 }
 
