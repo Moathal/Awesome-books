@@ -128,7 +128,10 @@ addBook.addEventListener('click', () => {
 });
 
 header.addEventListener('click', (e) => {
-  link = e.target.innerText.replace(/\s/g, '');
-  pages.forEach((page) => page.classList.remove('active'));
-  document.getElementById(link).classList.add('active');
+  let link = e.target.innerText.replace(/\s/g, '');
+  if (link === 'List' || link === 'Addnew' || link === 'Contact') {
+    pages.forEach((page) => page.classList.remove('active'));
+    document.getElementById(link).classList.add('active'); 
+  }
 });
+
