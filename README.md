@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Awesome Books
 
 > This project lists some Awesome books and you can add you favorite to it.
 
@@ -8,7 +8,7 @@
 
 - HTML & JavaScript.
 
-## Live Demo (if available)
+## Live Demo
 
 [Live Demo Link]https://moathal.github.io/Awesome-books/
 
